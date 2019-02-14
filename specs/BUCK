@@ -353,6 +353,10 @@ osquery_gentable_cxx_library(
             "linux",
         ),
         (
+            "linux/gce_instance_metadata.table",
+            "linux",
+        ),
+        (
             "linux/npm_packages.table",
             "linux",
         ),
