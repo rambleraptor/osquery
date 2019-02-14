@@ -1,0 +1,19 @@
+table_name("gce_instance_metadata")
+description("GCE instance metadata.")
+schema([
+    Column("id", INTEGER, "The unique identifier for this instance", index=True)
+    Column("cpu_platform", TEXT, "Hardware platform for this instance")
+    Column("description", TEXT, "Instance description")
+    Column("hostname", TEXT, "Instance hostname")
+    Column("machine_type", TEXT, "Instance machine type")
+    Column("image", TEXT, "instance image")
+    Column("name", TEXT, "instance name")
+    Column("preempted", TEXT, "is the instance premmpted?")
+    Column("zone", TEXT, "zone for instance")
+
+])
+attributes(cacheable=True)
+implementation("cloud/gce_metadata@genGceMetadata")
+examples([
+    "select * from gce_instance_metadata"
+])
