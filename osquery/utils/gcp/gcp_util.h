@@ -4,4 +4,10 @@ namespace osquery {
   static bool isGceInstance();
 
   Status getGceMetadata();
+
+  class GceResponse {
+    void set_response(std::stringstream *json_stream);
+
+    std::string get(std::string key);
+  }
 }
